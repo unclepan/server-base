@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "types": [
+      "jest",
+      "node"
+    ],
+    "paths": {
+      "@model/*": [
+        "./src/app/core/model/*"
+      ],
+      "@controller/*": [
+        "./src/app/core/controller/*"
+      ],
+      "@bll/*": [
+        "./src/app/core/bll/*"
+      ],
+      "@dal/*": [
+        "./src/app/core/dal/*"
+      ],
+      "@lib": [
+        "./src/app/lib/index"
+      ],
+      "@lib/*": [
+        "./src/app/lib/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts", 
+    "bin/**/*.ts",
+    "script/**/*.ts",
+    "test/**/*.ts",
+  ],
+  "exclude": [
+  ]
+}
