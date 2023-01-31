@@ -19,7 +19,7 @@ jobs:
             - name: Use Node.js
               uses: actions/setup-node@v1 # 安装 nodejs ， 第三方的 cations
               with:
-                  node-version: 14
+                  node-version: 18
             - name: print node version
               run: |
                   node -v
