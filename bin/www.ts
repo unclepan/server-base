@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+import 'dotenv/config';
 import http from 'http';
 import debug from 'debug';
 import app from '../src/app';
