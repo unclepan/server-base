@@ -24,7 +24,7 @@ const config: ConfigParam = {
 	redisConf: {
 		user: '',
 		port: 6379,
-		host: '127.0.0.1',
+		host: 'base-redis',
 		password: ''
 	},
 	// 常量配置

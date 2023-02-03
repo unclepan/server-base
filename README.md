@@ -15,6 +15,8 @@
 
     npm run start:dev
 
+# 测试环境使用docker部署
+
 # 正式环境编译本机测试
 1.编译
 
