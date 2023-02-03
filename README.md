@@ -26,7 +26,7 @@
 
 3.启动服务
 
-    npm run production:local
+    npm run compile:xxx
 
 
 

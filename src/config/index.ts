@@ -2,7 +2,7 @@ import devConfig from './dev.config';
 import testConfig from './test.config';
 import prodConfig from './prod.config';
 
-const NODE_ENV = process.env.NODE_ENV;
+const { NODE_ENV } = process.env;
 
 // 类型定义
 export interface ConfigParam {
