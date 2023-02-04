@@ -11,7 +11,7 @@ const cpuCoreLength = 1;
 
 const config = {
 	name: 'server-base',
-	script: path.join(__dirname, './www.js'),
+	script: path.join(__dirname, '../www.js'),
 	// watch: true,
 	ignore_watch: ['node_modules', '__test__', 'logs'],
 	instances: cpuCoreLength,

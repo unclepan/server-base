@@ -6,15 +6,15 @@ import { ConfigParam } from '.';
 const config: ConfigParam = {
 	// mysql 连接配置
 	mysqlConf: {
-		host: 'localhost',
+		host: 'base-mysql',
 		user: 'root',
 		password: 'Yp123456',
 		port: 3306,
 		database: 'oo_test_course'
 	},
-	// mongodb 连接配置, nodejs最新版，需要把localhost改成127.0.0.1
+	// mongodb 连接配置
 	mongodbConf: {
-		host: '127.0.0.1',
+		host: 'base-mongo',
 		user: '',
 		password: '',
 		port: 27017,

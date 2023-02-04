@@ -17,3 +17,31 @@ services:
             - 6378:6379
         environment:
             - TZ=Asia/Shanghai # 设置时区
+    base-mysql:
+        image: mysql # 引用官网 mysql 镜像
+        container_name: base-mysql
+        restart: always # 出错则重启
+        privileged: true # 高权限，执行下面的 mysql/init
+        command: --default-authentication-plugin=mysql_native_password # 远程访问
+        ports:
+            - 3305:3306 # 宿主机可以用 127.0.0.1:3305 即可连接容器中的数据库，和 redis 一样
+        volumes:
+            - .docker-volumes/mysql/log:/var/log/mysql # 记录日志
+            - .docker-volumes/mysql/data:/var/lib/mysql # 数据持久化
+            - ./mysql/init:/docker-entrypoint-initdb.d/ # 初始化 sql
+        environment:
+            - MYSQL_DATABASE=oo_test_course # 初始化容器时创建数据库
+            - MYSQL_ROOT_PASSWORD=Yp123456
+            - TZ=Asia/Shanghai # 设置时区
+    base-mongo:
+        image: mongo # 引用官网 mongo 镜像
+        container_name: base-mongo
+        restart: always
+        volumes:
+            - '.docker-volumes/mongo/data:/data/db' # 数据持久化
+        environment:
+            - MONGO_INITDB_DATABASE=oo_test_course
+            - TZ=Asia/Shanghai # 设置时区
+        ports:
+            - '27016:27017' # 宿主机可以用 127.0.0.1:27016 即可连接容器中的数据库
+
