@@ -11,8 +11,12 @@ RUN npm i
 RUN npm i pm2 -g
 RUN npm run build
 
+RUN chmod +x ./shell/wait-for-it.sh
+RUN chmod +x ./shell/start.sh
+
 # 启动
-CMD cd dist && npm run pm2start:test && npx pm2 log
+CMD ["./shell/wait-for-it.sh", "base-mysql:3306", "-t", "30", "--", "./shell/start.sh"]
+# CMD cd dist && npm run pm2start:test && npx pm2 log
 # 要有一个阻塞控制台的命令
 # CMD echo $SERVER_NAME && echo $AUTHOR_NAME && npm run start:dev
 

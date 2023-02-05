@@ -57,6 +57,10 @@ export default async function syncDb() {
 	}
 
 	if (needToSyncDb) {
-		await seq.sync({ alter: true });
+		try {
+			await seq.sync({ alter: true });
+		} catch (error) {
+			console.log(error, '同步数据表 失败');
+		}
 	}
 }

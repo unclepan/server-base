@@ -8,6 +8,8 @@ services:
         container_name: base-server
         ports:
             - 8081:3000 # 宿主机通过 8081 访问
+        depends_on:
+            - base-mysql
     base-redis: # service name，重要！
         image: redis # 引用官网 redis 镜像
         container_name: base-redis
