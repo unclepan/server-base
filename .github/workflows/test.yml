@@ -5,9 +5,14 @@ on:
         branches:
             - main
         paths:
-            - '.github/workflows/**'
             - '__test__/**'
+            - '.github/workflows/*'
+            - 'bin/*'
+            - 'mysql/**'
+            - 'script/**'
+            - 'shell/**'
             - 'src/**'
+            - '.env'
 
 jobs:
     test:
