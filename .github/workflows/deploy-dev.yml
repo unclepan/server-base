@@ -45,8 +45,8 @@ jobs:
                     git pull origin dev; # 重新下载最新代码
                     git remote remove origin; # 删除 origin ，否则会暴露 github 密码
                     启动 docker
-                    # docker-compose build base-server; # 和 docker-compose.yml service 名字一致
-                    # docker-compose up -d;
+                    docker-compose build base-server; # 和 docker-compose.yml service 名字一致
+                    docker-compose up -d;
                   "
             - name: delete ssh key # 删除 ssh key
               run: rm -rf ~/.ssh/id_rsa
