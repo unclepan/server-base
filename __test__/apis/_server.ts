@@ -21,7 +21,7 @@ if (isTestLocal) {
 // 存储登录 token ，统一拼接 headers.Authorization
 let TOKEN = '';
 // 测试机 host
-const REMOTE_HOST = 'http://182.92.xxx.xxx:8081'; // TODO 待定
+const REMOTE_HOST = 'http://43.129.75.108:8081'; // TODO 待定
 //发送请求
 async function ajax(
 	method: string,
@@ -62,8 +62,12 @@ async function ajax(
 		} else {
 			conf.data = bodyOrParams;
 		}
-		const res = await axios(conf);
-		result = res.data;
+		try {
+			const res = await axios(conf);
+			result = res.data;
+		} catch (error) {
+			console.log('error', error);
+		}
 	}
 
 	// 返回结果

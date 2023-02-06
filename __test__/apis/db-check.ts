@@ -7,6 +7,7 @@ const { get } = server;
 
 test('数据库连接', async () => {
 	const { data, errno } = await get('/api/test/db-check');
+
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	const { redisConn, mysqlConn, mongodbConn } = data;
