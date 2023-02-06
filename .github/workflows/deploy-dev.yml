@@ -40,6 +40,7 @@ jobs:
                     # 记得删除 origin ，否则会暴露 github 密码
 
                     cd /home/work/app/server-base;
+                    ls
                     git remote add origin https://unclepan:${{secrets.WFP_PASSWORD}}@github.com/unclepan/server-base.git
                     git checkout dev;
                     git pull origin dev; # 重新下载最新代码
