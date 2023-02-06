@@ -1,4 +1,4 @@
-# 开发环境起手式
+# 开发环境编译 本机启动
 1.第一步clone仓库
 
     git clone git@github.com:unclepan/server-base.git
@@ -15,9 +15,18 @@
 
     npm run start:dev
 
-# 测试环境使用docker部署
+# 测试环境编译 本机启动，使用docker部署
+1.本地安装docker
 
-# 正式环境编译本机测试
+2.编译
+
+    docker-compose build base-server
+
+3.启动服务
+
+    docker-compose up -d
+
+# 正式环境编译 本机启动
 1.编译
 
     npm run build
