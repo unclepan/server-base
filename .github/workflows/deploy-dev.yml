@@ -36,7 +36,7 @@ jobs:
               run: |
                   ssh work@43.129.75.108 "
                     # 【注意】用 work 账号登录，手动创建 /home/work/app 目录
-                    # 然后 git clone https://unclepan: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@github.com/unclepan/server-base.git -b dev （私有仓库，使用 github 用户名和密码）
+                    # 然后 git clone https://unclepan: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@github.com/unclepan/server-base.git -b dev （私有仓库，使用 github 用户名和密码）
                     # 记得删除 origin ，否则会暴露 github 密码
 
                     cd /home/work/app/server-base;
@@ -45,8 +45,8 @@ jobs:
                     git pull origin dev; # 重新下载最新代码
                     git remote remove origin; # 删除 origin ，否则会暴露 github 密码
                     启动 docker
-                    docker-compose build base-server; # 和 docker-compose.yml service 名字一致
-                    docker-compose up -d;
+                    docker compose build base-server; # 和 docker-compose.yml service 名字一致
+                    docker compose up -d;
                   "
             - name: delete ssh key # 删除 ssh key
               run: rm -rf ~/.ssh/id_rsa
