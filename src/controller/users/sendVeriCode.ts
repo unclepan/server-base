@@ -48,10 +48,9 @@ async function sendVeriCode(phoneNumber: string, isRemoteTest: boolean) {
 			// 发送短信
 			await sendVeriCodeMsg(phoneNumber, veriCode, msgTimeoutMin);
 			sendSuccess = true;
-		} catch (ex) {
+		} catch (err) {
 			sendSuccess = false;
-			console.error('发送短信验证码错误', ex);
-
+			console.error('发送短信验证码错误', err);
 			// TODO 及时报警，尽快解决问题
 		}
 	}
