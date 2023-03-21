@@ -41,6 +41,8 @@ export interface ConfigParam {
 	jwtExpiresIn: string; // 1. 字符串，如 '1h' '2d'； 2. 数字，单位是 s
 	// cors origin
 	corsOrigin: string;
+	// 短信验证码缓存时间，单位 s
+	msgVeriCodeTimeout: number;
 }
 
 class GlobalConfig {

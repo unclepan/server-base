@@ -30,12 +30,10 @@ class BaseRes {
  * 执行失败的数据模型
  */
 class ErrorRes extends BaseRes {
-	constructor({ errno = -1, message = '', data }: ResParam, addMessage = '') {
+	constructor({ errno = -1, message = '', data }: ResParam) {
 		super({
 			errno,
-			message: addMessage
-				? `${message} - ${addMessage}` // 有追加信息
-				: message,
+			message,
 			data
 		});
 	}
