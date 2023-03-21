@@ -8,6 +8,7 @@ const { phoneNumberSchema, phoneNumberVeriCodeSchema, userInfoSchema } = schema;
 
 // controller
 import sendVeriCode from '../controller/users/sendVeriCode';
+import loginByPhoneNumber from '../controller/users/loginByPhoneNumber';
 
 const router = new Router({
 	prefix: '/api/users'
@@ -24,6 +25,20 @@ router.post(
 		};
 		// 尝试发送验证码
 		const res = await sendVeriCode(phoneNumber, isRemoteTest);
+		ctx.body = res;
+	}
+);
+
+// 使用手机号登录
+router.post(
+	'/loginByPhoneNumber',
+	genValidator(phoneNumberVeriCodeSchema),
+	async ctx => {
+		const { phoneNumber, veriCode } = ctx.request.body as {
+			phoneNumber: string;
+			veriCode: string;
+		};
+		const res = await loginByPhoneNumber(phoneNumber, veriCode);
 		ctx.body = res;
 	}
 );
