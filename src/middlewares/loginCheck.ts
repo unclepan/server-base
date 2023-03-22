@@ -15,9 +15,10 @@ export default async function loginCheck(ctx: Koa.Context, next: Koa.Next) {
 	const errRes = new ErrorRes(loginCheckFailInfo);
 
 	// 获取 token
-	let token = ctx.header.authorization;
+	let token = ctx.headers.authorization as string;
+
 	const cookies = cookie.parse(ctx.header.cookie || '');
-	token = token || cookies.token;
+	token = token.replace(/^Bearer\s/, '') || cookies.token;
 	if (!token) {
 		ctx.body = errRes;
 		return;

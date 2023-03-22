@@ -18,7 +18,7 @@
     "lint:fix": "eslint --ext .ts --fix",
     "copy": "ts-node script/copy.ts",
     "rm": "ts-node script/rm.ts",
-    "test:local": "cross-env NODE_ENV=test_local jest --runInBand --detectOpenHandles --passWithNoTests --colors --forceExit",
+    "test:local": "cross-env NODE_ENV=test_local PROJECT_STATUS=source jest --runInBand --detectOpenHandles --passWithNoTests --colors --forceExit",
     "test:remote": "cross-env NODE_ENV=test_remote jest --runInBand --detectOpenHandles --passWithNoTests --colors --forceExit",
     "prepare": "husky install"
   },
