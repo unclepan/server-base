@@ -4,11 +4,12 @@ import resModel from '../res-model/index';
 import loginCheck from '../middlewares/loginCheck';
 import genValidator from '../middlewares/genValidator';
 import schema from '../validator/users';
-const { phoneNumberSchema, phoneNumberVeriCodeSchema, userInfoSchema } = schema;
-
 // controller
 import sendVeriCode from '../controller/users/sendVeriCode';
 import loginByPhoneNumber from '../controller/users/loginByPhoneNumber';
+
+const { SuccessRes } = resModel;
+const { phoneNumberSchema, phoneNumberVeriCodeSchema, userInfoSchema } = schema;
 
 const router = new Router({
 	prefix: '/api/users'
@@ -42,5 +43,11 @@ router.post(
 		ctx.body = res;
 	}
 );
+
+// 获取用户信息
+router.get('/getUserInfo', loginCheck, async ctx => {
+	// 经过了 loginCheck ，用户信息在 ctx.userInfo 中
+	ctx.body = new SuccessRes(ctx.state.user);
+});
 
 export default router;
