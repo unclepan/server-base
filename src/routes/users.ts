@@ -7,6 +7,7 @@ import schema from '../validator/users';
 // controller
 import sendVeriCode from '../controller/users/sendVeriCode';
 import loginByPhoneNumber from '../controller/users/loginByPhoneNumber';
+import updateUserInfo from '../controller/users/updateUserInfo';
 
 const { SuccessRes } = resModel;
 const { phoneNumberSchema, phoneNumberVeriCodeSchema, userInfoSchema } = schema;
@@ -46,8 +47,20 @@ router.post(
 
 // 获取用户信息
 router.get('/getUserInfo', loginCheck, async ctx => {
-	// 经过了 loginCheck ，用户信息在 ctx.userInfo 中
+	// 经过了 loginCheck ，用户信息在 ctx.state.user 中
 	ctx.body = new SuccessRes(ctx.state.user);
 });
+
+// 修改用户信息
+router.patch(
+	'/updateUserInfo',
+	loginCheck,
+	genValidator(userInfoSchema),
+	async ctx => {
+		// 经过了 loginCheck ，用户信息在 ctx.state.user 中
+		const res = await updateUserInfo(ctx.state.user, ctx.request.body as {});
+		ctx.body = res;
+	}
+);
 
 export default router;
