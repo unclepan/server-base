@@ -6,7 +6,7 @@ import serviceWorks from '../../service/works';
 import resModel from '../../res-model/index';
 import resModelFailInfo from '../../res-model/failInfo/index';
 
-const { updateWorkService, findOneWorkService } = serviceWorks;
+const { updateWorkService } = serviceWorks;
 const { ErrorRes, SuccessRes } = resModel;
 const { deleteWorkFailInfo, deleteWorkDbErrorFailInfo } = resModelFailInfo;
 /**
