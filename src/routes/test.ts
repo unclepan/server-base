@@ -1,11 +1,12 @@
 import Router from 'koa-router';
-import WorkModel from '../models/WorkModel';
+import modelsWorkContentModel from '../models/WorkContentModel';
 import UserModel from '../models/UserModel';
 import redisCache from '../cache/index';
 import jwt from '../utils/jwt';
 import loginCheck from '../middlewares/loginCheck';
 const { jwtSign } = jwt;
 const { cacheGet, cacheSet } = redisCache;
+const { WorkContentModel } = modelsWorkContentModel;
 
 const router = new Router({
 	prefix: '/api/test'
@@ -17,7 +18,7 @@ router.get('/db-check', async ctx => {
 	let mongodbConn;
 	try {
 		mongodbConn = true;
-		await WorkModel.findOne();
+		await WorkContentModel.findOne();
 	} catch (ex) {
 		mongodbConn = false;
 	}
