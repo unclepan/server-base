@@ -40,7 +40,7 @@ async function putBackWork(id: string, author: string) {
 	return res;
 }
 
-module.exports = {
+export default {
 	deleteWork,
 	putBackWork
 };

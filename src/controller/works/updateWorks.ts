@@ -62,7 +62,7 @@ async function transferWorks(
 	return res;
 }
 
-module.exports = {
+export default {
 	updateWorks,
 	transferWorks
 };

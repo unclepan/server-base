@@ -42,13 +42,13 @@ async function findOneWork(id: string, author: string) {
 async function findMyWorks(
 	author: string,
 	queryInfo: {
-		id: string;
-		uuid: string;
-		title: string;
-		status: string;
+		id?: string;
+		uuid?: string;
+		title?: string;
+		status?: string;
 		[propName: string]: unknown;
 	},
-	pageInfo: { pageSize: number; pageIndex: number }
+	pageInfo: { pageSize?: number; pageIndex?: number }
 ) {
 	const { id, uuid, title, status, isTemplate } = queryInfo;
 
@@ -73,7 +73,7 @@ async function findMyWorks(
 	return new SuccessRes({ list, count });
 }
 
-module.exports = {
+export default {
 	findOneWork,
 	findMyWorks
 };
