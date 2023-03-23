@@ -34,7 +34,7 @@ async function updateWorks(id: string, author: string, data = {}) {
 	}
 
 	// 更新成功
-	if (res) return new SuccessRes();
+	if (res) return new SuccessRes(res);
 	// 更新失败
 	return new ErrorRes(updateWorkFailInfo, 'id 或 author 不匹配');
 }

@@ -27,7 +27,7 @@ async function deleteWork(id: string, author: string, putBack = false) {
 	}
 
 	// 删除成功
-	if (res) return new SuccessRes();
+	if (res) return new SuccessRes(res);
 	// 删除失败
 	return new ErrorRes(deleteWorkFailInfo, 'id 或 author 不匹配');
 }
