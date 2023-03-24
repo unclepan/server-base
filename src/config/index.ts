@@ -43,6 +43,8 @@ export interface ConfigParam {
 	corsOrigin: string;
 	// 短信验证码缓存时间，单位 s
 	msgVeriCodeTimeout: number;
+	// 发布出来的前端展示域名
+	FEOrigin: string;
 }
 
 class GlobalConfig {

@@ -43,7 +43,9 @@ const config: ConfigParam = {
 	// cors origin
 	corsOrigin: '*',
 	// 短信验证码缓存时间，单位 s
-	msgVeriCodeTimeout: 5 * 60
+	msgVeriCodeTimeout: 5 * 60,
+	// 发布出来的前端展示域名
+	FEOrigin: 'http://localhost:3001'
 };
 
 export default config;
