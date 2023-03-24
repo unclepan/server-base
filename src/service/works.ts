@@ -143,6 +143,7 @@ async function findWorkListService(
 		title?: string;
 		isTemplate?: boolean;
 		status?: string;
+		isPublic?: boolean;
 	},
 	pageOpt: { pageSize: number; pageIndex: number }
 ) {
