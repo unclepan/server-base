@@ -45,7 +45,13 @@ const config: ConfigParam = {
 	// 短信验证码缓存时间，单位 s
 	msgVeriCodeTimeout: 5 * 60,
 	// 发布出来的前端展示域名
-	FEOrigin: 'http://localhost:3001'
+	FEOrigin: 'http://localhost:3001',
+	// 腾讯云短信服务配置
+	tencentMsgConf: {
+		// 获取密钥 https://console.cloud.tencent.com/cam/capi
+		SECRET_ID: 'AKIDta2FFyQbV8XjjTBtXChz1qUt2kCPN7lD',
+		SECRET_KEY: 'FD1g5GExPakiZFeokV2ILMEsqc8pLcfU'
+	}
 };
 
 export default config;

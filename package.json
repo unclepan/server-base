@@ -51,6 +51,7 @@
     "shelljs": "^0.8.5",
     "simple-git": "^3.16.0",
     "supertest": "^6.3.3",
+    "tencentcloud-sdk-nodejs": "^4.0.566",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
