@@ -8,11 +8,12 @@ import controllerCreateWorks from '../controller/works/createWorks';
 import controllerFindWorks from '../controller/works/findWorks';
 import controllerUpdateWorks from '../controller/works/updateWorks';
 import controllerDeleteWorks from '../controller/works/deleteWorks';
-// const { publishWork } = require('../controller/works/publishWorks')
+import controllerPublishWorks from '../controller/works/publishWorks';
 const { createWorks, copyWorks } = controllerCreateWorks;
 const { findOneWork, findMyWorks } = controllerFindWorks;
 const { updateWorks, transferWorks } = controllerUpdateWorks;
 const { deleteWork, putBackWork } = controllerDeleteWorks;
+const { publishWork } = controllerPublishWorks;
 
 const { workInfoSchema } = schema;
 
@@ -126,20 +127,20 @@ router.get('/', loginCheck, async ctx => {
 	ctx.body = res;
 });
 
-// // 发布作品
-// router.post('/publish/:id', loginCheck, async ctx => {
-//     const { id } = ctx.params
-//     const { username } = ctx.state.user
-//     const res = await publishWork(id, username)
-//     ctx.body = res
-// })
+// 发布作品
+router.post('/publish/:id', loginCheck, async ctx => {
+	const { id } = ctx.params;
+	const { username } = ctx.state.user;
+	const res = await publishWork(id, username);
+	ctx.body = res;
+});
 
-// // 发布为模板
-// router.post('/publish-template/:id', loginCheck, async ctx => {
-//     const { id } = ctx.params
-//     const { username } = ctx.state.user
-//     const res = await publishWork(id, username, true)
-//     ctx.body = res
-// })
+// 发布为模板
+router.post('/publish-template/:id', loginCheck, async ctx => {
+	const { id } = ctx.params;
+	const { username } = ctx.state.user;
+	const res = await publishWork(id, username, true);
+	ctx.body = res;
+});
 
 export default router;

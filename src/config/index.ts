@@ -43,6 +43,14 @@ export interface ConfigParam {
 	corsOrigin: string;
 	// 短信验证码缓存时间，单位 s
 	msgVeriCodeTimeout: number;
+	// 发布出来的前端展示域名
+	FEOrigin: string;
+	// 腾讯云短信服务配置
+	tencentMsgConf: {
+		// 获取密钥 https://console.cloud.tencent.com/cam/capi
+		SECRET_ID: string;
+		SECRET_KEY: string;
+	};
 }
 
 class GlobalConfig {
