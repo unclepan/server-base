@@ -46,11 +46,12 @@ const config: ConfigParam = {
 	msgVeriCodeTimeout: 5 * 60,
 	// 发布出来的前端展示域名
 	FEOrigin: 'http://localhost:3001',
-	// 腾讯云短信服务配置
-	tencentMsgConf: {
+	// 腾讯云服务配置
+	tencentConf: {
 		// 获取密钥 https://console.cloud.tencent.com/cam/capi
 		SECRET_ID: 'AKIDta2FFyQbV8XjjTBtXChz1qUt2kCPN7lD',
-		SECRET_KEY: 'FD1g5GExPakiZFeokV2ILMEsqc8pLcfU'
+		SECRET_KEY: 'FD1g5GExPakiZFeokV2ILMEsqc8pLcfU',
+		CDN_HOST: ''
 	}
 };
 

@@ -7,7 +7,7 @@ import config from '../config';
 // 导入对应产品模块的client models。
 const smsClient = tencentcloud.sms.v20210111.Client;
 
-const { SECRET_ID, SECRET_KEY } = config.tencentMsgConf;
+const { SECRET_ID, SECRET_KEY } = config.tencentConf;
 
 /* 实例化要请求产品(以sms为例)的client对象 */
 const client = new smsClient({
