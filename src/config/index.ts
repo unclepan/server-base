@@ -46,11 +46,17 @@ export interface ConfigParam {
 	// 发布出来的前端展示域名
 	FEOrigin: string;
 	// 腾讯云服务配置
-	tencentConf: {
+	tencentCloudConf: {
 		// 获取密钥 https://console.cloud.tencent.com/cam/capi
 		SECRET_ID: string;
 		SECRET_KEY: string;
 		CDN_HOST: string;
+	};
+	// 百度云内容审核
+	baiduCloudCensorConf: {
+		APP_ID: string;
+		API_KEY: string;
+		SECRET_KEY: string;
 	};
 }
 

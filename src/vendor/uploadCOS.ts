@@ -6,7 +6,7 @@ import { createReadStream, ReadStream, statSync } from 'fs';
 import { parse } from 'url';
 import COS from 'cos-nodejs-sdk-v5';
 import config from '../config';
-const { SECRET_ID, SECRET_KEY, CDN_HOST } = config.tencentConf;
+const { SECRET_ID, SECRET_KEY, CDN_HOST } = config.tencentCloudConf;
 
 // 初始化 oss 实例
 const cos = new COS({

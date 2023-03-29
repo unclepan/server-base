@@ -37,6 +37,7 @@
     "src/**/*.ts", 
     "bin/**/*.ts",
     "script/**/*.ts",
+    "types/**/*.d.ts",
   ],
   "exclude": [
   ]
