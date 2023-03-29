@@ -48,7 +48,7 @@ function getWorkImgs(work: Work) {
 	const { shareImg = '' } = setting; // 分享小图标
 
 	// 存储结果
-	const imgs = [];
+	const imgs: string[] = [];
 
 	if (backgroundImage) imgs.push(backgroundImage);
 	if (shareImg) imgs.push(shareImg);
@@ -73,7 +73,7 @@ function getWorkText(work: Work) {
 	const { components = [] } = content;
 
 	// 存储结果
-	const result = [];
+	const result: string[] = [];
 
 	// 增加标题、描述
 	result.push(title);
