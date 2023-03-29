@@ -47,11 +47,17 @@ const config: ConfigParam = {
 	// 发布出来的前端展示域名
 	FEOrigin: 'http://localhost:3001',
 	// 腾讯云服务配置
-	tencentConf: {
+	tencentCloudConf: {
 		// 获取密钥 https://console.cloud.tencent.com/cam/capi
 		SECRET_ID: 'AKIDta2FFyQbV8XjjTBtXChz1qUt2kCPN7lD',
 		SECRET_KEY: 'FD1g5GExPakiZFeokV2ILMEsqc8pLcfU',
 		CDN_HOST: ''
+	},
+	// 百度云内容审核
+	baiduCloudCensorConf: {
+		APP_ID: '31739340',
+		API_KEY: 'SYDYDGPG53laSbaFq3d6uS3r',
+		SECRET_KEY: '9aa4BExRL8jRASlaYfm0LYXXmpaNuXAz'
 	}
 };
 
